@@ -7,9 +7,14 @@ import ElementPlus from 'element-plus'
 import { ElConfigProvider } from 'element-plus'
 import 'element-plus/dist/index.css'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+import en from 'element-plus/dist/locale/en.mjs'
+import ru from 'element-plus/dist/locale/ru.mjs'
+import { language, translate } from './localization'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import App from './App.vue'
 import router from './router'
+
+const locales = { ru, en, zh: zhCn }
 
 const app = createApp({
   name: 'RootProvider',
@@ -17,6 +22,7 @@ const app = createApp({
     return h(
       ElConfigProvider,
       {
+        locale: locales[language.value],
         message: {
           duration: 5000,
           showClose: true,
@@ -35,5 +41,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 app.use(pinia)
 app.use(router)
-app.use(ElementPlus, { locale: zhCn })
+app.use(ElementPlus, { locale: locales[language.value] })
+app.config.globalProperties.$t = translate
 app.mount('#app')

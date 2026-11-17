@@ -1,15 +1,22 @@
 <template>
   <div class="app">
     <router-view />
-    <button v-if="dramaId" class="assistant-launcher" type="button" @click="open = true">助手</button>
+    <LanguageSwitcher />
+    <button v-if="dramaId" class="assistant-launcher" type="button" @click="open = true">{{ $t("助手") }}</button>
     <AgentDrawer v-if="dramaId" v-model:open="open" :drama-id="dramaId" />
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
 import AgentDrawer from '@/components/AgentDrawer.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import { startInterfaceLocalization } from '@/localization'
+
+let stopLocalization
+onMounted(() => { stopLocalization = startInterfaceLocalization() })
+onBeforeUnmount(() => stopLocalization?.())
 
 const route = useRoute()
 const open = ref(false)

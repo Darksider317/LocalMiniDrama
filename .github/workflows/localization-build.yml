@@ -1,0 +1,71 @@
+name: Russian interface - Windows build
+
+concurrency:
+  group: localization-build-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - feat/russian-interface
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontweb/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install frontend dependencies
+        working-directory: frontweb
+        run: npm ci
+
+      - name: Run frontend tests
+        working-directory: frontweb
+        run: node --test test/*.test.js
+
+      - name: Build frontend
+        working-directory: frontweb
+        run: npm run build
+
+      - name: Install backend dependencies
+        working-directory: backend-node
+        run: npm ci
+
+      - name: Install desktop dependencies
+        working-directory: desktop
+        run: npm ci
+
+      - name: Prepare desktop assets
+        working-directory: desktop
+        run: |
+          node scripts/copy-front.js
+          node scripts/copy-backend.js
+
+      - name: Package Windows app
+        working-directory: desktop
+        run: npx electron-builder --win --publish never
+
+      - name: Upload installers
+        uses: actions/upload-artifact@v4
+        with:
+          name: LocalMiniDrama-RU-Windows
+          path: desktop/release/*.exe
+          if-no-files-found: error
+          retention-days: 14

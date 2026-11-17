@@ -2,7 +2,7 @@
   <div class="app">
     <router-view />
     <LanguageSwitcher />
-    <button v-if="dramaId" class="assistant-launcher" type="button" @click="open = true">助手</button>
+    <button v-if="dramaId" class="assistant-launcher" type="button" @click="open = true">{{ $t("助手") }}</button>
     <AgentDrawer v-if="dramaId" v-model:open="open" :drama-id="dramaId" />
   </div>
 </template>

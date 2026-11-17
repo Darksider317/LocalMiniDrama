@@ -95,8 +95,8 @@
               <el-button size="small" type="danger" plain circle :icon="Delete" title="删除" @click="onDelete(d)" />
             </div>
             <div class="project-card-body">
-              <h3 class="project-title">{{ d.title || '未命名项目' }}</h3>
-              <p class="project-desc">{{ d.description || '暂无描述' }}</p>
+              <h3 class="project-title">{{ d.title || $t('未命名项目') }}</h3>
+              <p class="project-desc">{{ d.description || $t('暂无描述') }}</p>
               <div class="project-badges">
                 <span class="badge badge-status" :class="'badge-status--' + (d.status || 'draft')">{{ formatStatus(d.status) }}</span>
                 <span v-if="d.episodes?.length" class="badge badge-episodes">{{ d.episodes.length }} 集</span>

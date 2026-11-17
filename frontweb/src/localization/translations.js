@@ -2,8 +2,8 @@
 // Add a row for new labels; untranslated strings deliberately fall back to Chinese.
 export const translations = {
   "本地短剧助手": {
-    "ru": "Локальная студия мини-сериалов",
-    "en": "Local Mini Drama Studio"
+    "ru": "Студия мини-сериалов",
+    "en": "Mini Drama Studio"
   },
   "项目列表": {
     "ru": "Проекты",
@@ -1620,5 +1620,421 @@ export const translations = {
   "重新生成分镜": {
     "ru": "Пересоздать раскадровку",
     "en": "Regenerate storyboard"
+  },
+  "助手": {
+    "ru": "Ассистент",
+    "en": "Assistant"
+  },
+  "中文": {
+    "ru": "Китайский",
+    "en": "Chinese"
+  },
+  "英文": {
+    "ru": "Английский",
+    "en": "English"
+  },
+  "删除选中 ( )": {
+    "ru": "Удалить выбранные ( )",
+    "en": "Delete selected ( )"
+  },
+  "⚡ 一键生成并发设置": {
+    "ru": "⚡ Параллельные задачи генерации",
+    "en": "⚡ Concurrent generation settings"
+  },
+  "📌 适用范围": {
+    "ru": "📌 Область применения",
+    "en": "📌 Applies to"
+  },
+  "🔒 当前为厂商锁定模式，AI 服务由管理员统一配置。你只能修改": {
+    "ru": "🔒 Режим ограниченного доступа. Администратор управляет ИИ-сервисами. Можно изменить только",
+    "en": "🔒 Locked mode. AI services are managed by an administrator. You can only edit"
+  },
+  "个任务同时生成": {
+    "ru": "задач одновременно",
+    "en": "tasks simultaneously"
+  },
+  "每种服务类型只有一个「默认」配置。": {
+    "ru": "У каждого типа сервиса может быть только одна конфигурация по умолчанию.",
+    "en": "Only one default configuration is allowed per service type."
+  },
+  "生成时系统会优先使用默认配置，建议每类至少设一个默认。": {
+    "ru": "Система использует конфигурацию по умолчанию. Рекомендуется выбрать её для каждого типа сервиса.",
+    "en": "Generation uses the default configuration. Set one for each service type."
+  },
+  "即梦2角色认证": {
+    "ru": "Регистрация персонажей Jimeng 2",
+    "en": "Jimeng 2 character authentication"
+  },
+  "从下拉选择预设厂商，会自动填入 Base URL 和模型列表。": {
+    "ru": "Выберите провайдера из списка: адрес API и модели подставятся автоматически.",
+    "en": "Choose a preset provider to fill in the base URL and models automatically."
+  },
+  "也可直接输入自定义厂商名（需手动填写其他字段）。": {
+    "ru": "Можно указать своего провайдера и заполнить поля вручную.",
+    "en": "You can enter a custom provider and fill the other fields manually."
+  },
+  "：通义千问 / 火山引擎，国内访问稳定。": {
+    "ru": "Qwen и Volcengine обычно доступны из Китая.",
+    "en": "Qwen / Volcengine have stable access in China."
+  },
+  "勾选后，全能模式分镜生视频会走多参考图（场景+角色+道具），不再弹出「模型不匹配」降级提示。": {
+    "ru": "При включении универсальный режим использует несколько референсов (локации, персонажи, реквизит).",
+    "en": "When enabled, universal video mode uses multiple references (locations, characters, props)."
+  },
+  "「低价 Seedance2」默认开启；其他厂商仅在确认上游支持多图参考时勾选。": {
+    "ru": "Для бюджетного Seedance 2 включено по умолчанию; для других провайдеров включайте при поддержке нескольких референсов.",
+    "en": "Enabled by default for budget Seedance 2; only enable for others when multiple references are supported."
+  },
+  "🖼 图片 / 分镜图 协议": {
+    "ru": "🖼 Протокол изображений / раскадровки",
+    "en": "🖼 Image / storyboard API protocol"
+  },
+  "🎬 视频 协议": {
+    "ru": "🎬 Протокол генерации видео",
+    "en": "🎬 Video API protocol"
+  },
+  "视频": {
+    "ru": "Видео",
+    "en": "Video"
+  },
+  "提交端点": {
+    "ru": "URL создания задачи",
+    "en": "Submit endpoint"
+  },
+  "查询端点": {
+    "ru": "URL проверки задачи",
+    "en": "Query endpoint"
+  },
+  "提交地址：": {
+    "ru": "Адрес создания:",
+    "en": "Submit URL:"
+  },
+  "查询地址：": {
+    "ru": "Адрес проверки:",
+    "en": "Query URL:"
+  },
+  "自动推断": {
+    "ru": "Определяется автоматически",
+    "en": "Auto-detect"
+  },
+  "模型列表": {
+    "ru": "Список моделей",
+    "en": "Model list"
+  },
+  "该厂商下可用的模型，多个用逗号或换行分隔。": {
+    "ru": "Модели провайдера. Разделяйте запятыми или переносами строк.",
+    "en": "Available models. Separate with commas or new lines."
+  },
+  "可从上方「追加预设模型」下拉快速添加，也可手动输入。": {
+    "ru": "Можно выбрать готовые модели или ввести их вручную.",
+    "en": "Choose preset models or enter manually."
+  },
+  "该配置被选为「默认」时，生成故事/图片/视频将使用此处指定的模型。": {
+    "ru": "Если конфигурация выбрана по умолчанию, для генерации будут использоваться указанные модели.",
+    "en": "When this is the default configuration, generation uses the models listed here."
+  },
+  "思考模式": {
+    "ru": "Режим размышлений",
+    "en": "Thinking mode"
+  },
+  "关闭思考": {
+    "ru": "Выключить размышления",
+    "en": "Disable thinking"
+  },
+  "开启思考": {
+    "ru": "Включить размышления",
+    "en": "Enable thinking"
+  },
+  "优先级": {
+    "ru": "Приоритет",
+    "en": "Priority"
+  },
+  "📋 将自动创建以下配置": {
+    "ru": "📋 Будут созданы следующие конфигурации",
+    "en": "📋 The following configurations will be created"
+  },
+  "🔑 如何申请 API Key": {
+    "ru": "🔑 Где получить API-ключ",
+    "en": "🔑 How to get an API key"
+  },
+  "打开官网：": {
+    "ru": "Официальный сайт:",
+    "en": "Open official site:"
+  },
+  "登录": {
+    "ru": "Войти",
+    "en": "Log in"
+  },
+  "密钥只在创建时显示一次，请妥善保存后填入下方": {
+    "ru": "Ключ показывается только один раз. Сохраните его и вставьте ниже.",
+    "en": "The key is shown only once. Save it and paste it below."
+  },
+  "确定，一键创建配置": {
+    "ru": "Создать конфигурации",
+    "en": "Create configurations"
+  },
+  "注册/登录账号，进入 Settings → API Keys": {
+    "ru": "Войдите в аккаунт и откройте Settings → API Keys",
+    "en": "Sign in and open Settings → API Keys"
+  },
+  "复制 Key 填入下方": {
+    "ru": "Скопируйте ключ в поле ниже",
+    "en": "Copy the key below"
+  },
+  "加载更多": {
+    "ru": "Загрузить ещё",
+    "en": "Load more"
+  },
+  "正在测试…": {
+    "ru": "Проверка…",
+    "en": "Testing…"
+  },
+  "确认替换": {
+    "ru": "Подтвердить замену",
+    "en": "Confirm replacement"
+  },
+  "操作": {
+    "ru": "Действия",
+    "en": "Actions"
+  },
+  "1（串行，最稳定）": {
+    "ru": "1 (по очереди, надёжнее)",
+    "en": "1 (sequential, most reliable)"
+  },
+  "3（默认）": {
+    "ru": "3 (по умолчанию)",
+    "en": "3 (default)"
+  },
+  "SD2 资产管理": {
+    "ru": "Управление ресурсами SD2",
+    "en": "SD2 asset management"
+  },
+  "选择预设厂商（自动填充 URL 和模型）": {
+    "ru": "Выберите провайдера (URL и модели заполнятся автоматически)",
+    "en": "Choose provider (auto-fill URL and models)"
+  },
+  "选择接口规范（自定义厂商必选）": {
+    "ru": "Выберите протокол API (обязательно для своего провайдера)",
+    "en": "Select API protocol (required for custom provider)"
+  },
+  "接口规范说明": {
+    "ru": "Описание протокола API",
+    "en": "API protocol details"
+  },
+  "配置的显示名，用于在列表中区分不同配置，选择厂商后可自动生成。": {
+    "ru": "Название для отображения конфигурации в списке. Может создаваться автоматически.",
+    "en": "Display name for distinguishing configurations. Can be auto-generated."
+  },
+  "用于创作页「角色生成 → SD2认证」": {
+    "ru": "Для «Генерация персонажей → Авторизация SD2»",
+    "en": "Used for Character generation → SD2 authentication"
+  },
+  "选择或输入声音 ID": {
+    "ru": "Выберите или укажите ID голоса",
+    "en": "Select or enter voice ID"
+  },
+  "声音 ID": {
+    "ru": "ID голоса",
+    "en": "Voice ID"
+  },
+  "MiniMax 女声": {
+    "ru": "Женские голоса MiniMax",
+    "en": "MiniMax female voices"
+  },
+  "MiniMax 男声": {
+    "ru": "Мужские голоса MiniMax",
+    "en": "MiniMax male voices"
+  },
+  "MiniMax GroupId，如 1234567890": {
+    "ru": "GroupId MiniMax, например 1234567890",
+    "en": "MiniMax GroupId, e.g. 1234567890"
+  },
+  "控制「一键生成视频」和「补全并生成」流水线中，各类任务同时并行生成的数量。并发数越高速度越快，但过高可能触发 API 限流（429 错误）。建议根据你的 API 额度选择。": {
+    "ru": "Число одновременных задач полного цикла генерации. Слишком высокий параллелизм может вызвать ошибку API 429.",
+    "en": "Number of simultaneous full-pipeline tasks. Too many concurrent requests may trigger API rate limits (429)."
+  },
+  "图片并发：步骤 2 角色图、步骤 4 场景图、步骤 6 分镜图": {
+    "ru": "Изображения: этапы 2 (персонажи), 4 (локации) и 6 (раскадровка)",
+    "en": "Images: steps 2 (characters), 4 (locations), 6 (storyboard)"
+  },
+  "视频并发：步骤 7 分镜视频": {
+    "ru": "Видео: этап 7 (видео по кадрам)",
+    "en": "Video: step 7 (storyboard videos)"
+  },
+  "视频自定义厂商": {
+    "ru": "Пользовательский видеопровайдер",
+    "en": "Custom video provider"
+  },
+  "图片/NanoBanana": {
+    "ru": "Изображения / NanoBanana",
+    "en": "Images / NanoBanana"
+  },
+  "Gemini 固定模式": {
+    "ru": "Фиксированный режим Gemini",
+    "en": "Gemini fixed mode"
+  },
+  "📌 系统将使用以下接口地址": {
+    "ru": "📌 Используемые адреса API",
+    "en": "📌 API endpoints to be used"
+  },
+  "素材列表": {
+    "ru": "Список материалов",
+    "en": "Asset list"
+  },
+  "列出素材": {
+    "ru": "Показать материалы",
+    "en": "List assets"
+  },
+  "调用网关": {
+    "ru": "Вызвать шлюз",
+    "en": "Call gateway"
+  },
+  "素材管理 API 文档": {
+    "ru": "Документация API материалов",
+    "en": "Asset API documentation"
+  },
+  "中文版本": {
+    "ru": "Китайская версия",
+    "en": "Chinese version"
+  },
+  "中文版": {
+    "ru": "Китайская версия",
+    "en": "Chinese version"
+  },
+  "根地址": {
+    "ru": "Базовый адрес",
+    "en": "Base URL"
+  },
+  "官方域名：": {
+    "ru": "Официальный домен:",
+    "en": "Official domain:"
+  },
+  "官方旧模型名将在 2026-07-24 废弃；新配置建议使用 deepseek-v4-flash 或 deepseek-v4-pro。": {
+    "ru": "Старые названия моделей официально устарели 24.07.2026. Рекомендуются deepseek-v4-flash и deepseek-v4-pro.",
+    "en": "Old model names were deprecated on 2026-07-24. Prefer deepseek-v4-flash or deepseek-v4-pro."
+  },
+  "镜 ·": {
+    "ru": "кадр ·",
+    "en": "shot ·"
+  },
+  "📜 剧本": {
+    "ru": "📜 Сценарий",
+    "en": "📜 Script"
+  },
+  "剧本 → 提取角色/场景/道具 → 分镜 → 生图 → 视频": {
+    "ru": "Сценарий → персонажи / локации / реквизит → раскадровка → изображения → видео",
+    "en": "Script → characters / locations / props → storyboard → images → video"
+  },
+  "经典模式流水线：分镜 → 脚本摘要 → 分镜图 → 视频。摘要节点是画布可视化，列表里合并在分镜编辑区。顶栏「本集生成」可 AI 批量操作；单击分镜可单镜生图/生视频。": {
+    "ru": "Классический процесс: кадры → описание → изображение → видео. Панель сверху позволяет запускать пакетную генерацию.",
+    "en": "Classic workflow: shots → summary → image → video. The toolbar supports batch generation."
+  },
+  "从剧本库选择后，仅把「故事梗概」与「各集剧本正文」写入当前工程，不会导入角色、分镜、图片或视频。": {
+    "ru": "Импортируются только синопсис и текст эпизодов, без персонажей, кадров, изображений и видео.",
+    "en": "Only synopsis and episode scripts are imported, without characters, shots, images or videos."
+  },
+  "剧本库为空，请先在「剧本管理」创建剧本": {
+    "ru": "Библиотека сценариев пуста. Создайте сценарий в разделе управления",
+    "en": "Script library is empty. Create a script in Script management first"
+  },
+  "秒": {
+    "ru": "сек.",
+    "en": "sec"
+  },
+  "已暂停 — 点击右上角\"继续\"恢复": {
+    "ru": "На паузе. Нажмите «Продолжить» справа вверху",
+    "en": "Paused. Click Resume at the top right"
+  },
+  "生成四视图道具（默认单图，纯色无缝背景）": {
+    "ru": "Четыре ракурса реквизита (по умолчанию одно изображение)",
+    "en": "Four-view prop image (single image by default)"
+  },
+  "生成四宫格场景（默认单图）": {
+    "ru": "Четыре ракурса локации (по умолчанию одно изображение)",
+    "en": "Four-view location image (single image by default)"
+  },
+  "四/九宫格自动按视角拆分": {
+    "ru": "Автоматически разделить сетку 2×2 / 3×3 на ракурсы",
+    "en": "Auto-split 2×2 / 3×3 grid by view"
+  },
+  "连贯帧模式（自动衔接相邻视频帧）": {
+    "ru": "Непрерывность кадров (автосвязь видеоклипов)",
+    "en": "Frame continuity (auto-link adjacent clips)"
+  },
+  "启用后批量视频顺序生成，每条视频的": {
+    "ru": "При включении видео создаются по очереди. Каждый клип использует",
+    "en": "When enabled, videos are generated sequentially. Each clip uses"
+  },
+  "自动截取并作为下一条视频的": {
+    "ru": "автоматически извлекается и служит для следующего клипа",
+    "en": "is automatically extracted and used for the next clip"
+  },
+  "，减少镜头切换的跳跃感。": {
+    "ru": ", уменьшая резкие переходы между кадрами.",
+    "en": "to reduce abrupt cuts between shots."
+  },
+  "⚠️ 需要模型支持图生视频（i2v）": {
+    "ru": "⚠️ Требуется поддержка image-to-video (i2v)",
+    "en": "⚠️ Requires image-to-video (i2v) support"
+  },
+  "条失败": {
+    "ru": "ошибок",
+    "en": "failed"
+  },
+  "（正在停止...）": {
+    "ru": "(остановка…)",
+    "en": "(stopping…)"
+  },
+  "分镜图生成失败记录：": {
+    "ru": "Ошибки генерации изображений раскадровки:",
+    "en": "Storyboard image errors:"
+  },
+  "分镜视频生成失败记录：": {
+    "ru": "Ошибки генерации видео:",
+    "en": "Storyboard video errors:"
+  },
+  "检测到分镜可能不完整（AI 输出被截断），请确认分镜数量是否符合预期，必要时可重新生成。": {
+    "ru": "Возможно, раскадровка неполная: вывод ИИ был обрезан. Проверьте число кадров и при необходимости перезапустите генерацию.",
+    "en": "The storyboard may be incomplete because AI output was truncated. Check the shot count and regenerate if necessary."
+  },
+  "请先在「角色生成」中添加角色": {
+    "ru": "Сначала добавьте персонажа в разделе генерации персонажей",
+    "en": "Add a character in Character generation first"
+  },
+  "请先在「道具生成」中添加物品": {
+    "ru": "Сначала добавьте предмет в разделе генерации реквизита",
+    "en": "Add an item in Prop generation first"
+  },
+  "已全部添加或无角色": {
+    "ru": "Все персонажи добавлены либо список пуст",
+    "en": "All characters added or none available"
+  },
+  "改为 grok视频格式": {
+    "ru": "Преобразовать в формат Grok Video",
+    "en": "Convert to Grok video format"
+  },
+  "松开上传到首帧": {
+    "ru": "Отпустите, чтобы загрузить первый кадр",
+    "en": "Release to upload first frame"
+  },
+  "超分(首帧)": {
+    "ru": "Увеличить разрешение (первый кадр)",
+    "en": "Upscale (first frame)"
+  },
+  "超分": {
+    "ru": "Увеличение разрешения",
+    "en": "Upscale"
+  },
+  "继续查询": {
+    "ru": "Продолжить проверку",
+    "en": "Continue polling"
+  },
+  "尾帧衔接": {
+    "ru": "Связь с последним кадром",
+    "en": "Last-frame continuity"
+  },
+  "请先生成分镜": {
+    "ru": "Сначала создайте раскадровку",
+    "en": "Generate storyboards first"
   }
 }
